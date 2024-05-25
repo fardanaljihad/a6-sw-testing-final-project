@@ -1,4 +1,4 @@
-package com.a6.finalproject;
+package com.a6.finalproject.swaglabs.runners;
 
 import org.junit.platform.suite.api.ConfigurationParameter;
 import org.junit.platform.suite.api.IncludeEngines;
