@@ -118,20 +118,20 @@ public class CartSteps {
   // Scenario 3
   @Given("User is on the cart page")
   public void user_is_on_the_cart_page() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
+    dashboardPageActions.clickShoppingCartContainer();
   }
 
   @When("User clicks the continue shopping button")
   public void user_clicks_the_continue_shopping_button() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
+    cartPageActions.clickContinueShoppingBtn();
   }
 
   @Then("User is redirected to the dashboard page")
   public void user_is_redirected_to_the_dashboard_page() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
+    String expectedResult = "https://www.saucedemo.com/inventory.html";
+    String actualResult = driver.getCurrentUrl();
+
+    assertEquals(expectedResult, actualResult);
   }
   
 }
