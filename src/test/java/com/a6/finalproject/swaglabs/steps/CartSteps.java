@@ -13,6 +13,7 @@ public class CartSteps {
   WebDriver driver = HelperClass.getDriver();
   CartPageActions cartPageActions = new CartPageActions(driver);
 
+  // Background
   @Given("User has logged in with valid credentials")
   public void user_has_logged_in_with_valid_credentials() {
     // Write code here that turns the phrase above into concrete actions
@@ -25,7 +26,8 @@ public class CartSteps {
     throw new io.cucumber.java.PendingException();
   }
 
-  @When("User clicks the Add to cart button on the {string} product")
+  // Scenario 1
+  @Given("User clicks the Add to cart button on the {string} product")
   public void user_clicks_the_add_to_cart_button_on_the_product(String string) {
     // Write code here that turns the phrase above into concrete actions
     throw new io.cucumber.java.PendingException();
@@ -42,9 +44,34 @@ public class CartSteps {
     // Write code here that turns the phrase above into concrete actions
     throw new io.cucumber.java.PendingException();
   }
-  
+
   @Then("User sees the {string} product")
   public void user_sees_the_product(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+  }
+
+  // Scenario 2
+  @Given("User has added {string} to the cart")
+  public void user_has_added_to_the_cart(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+  }
+
+  @When("User clicks the Checkout button")
+  public void user_clicks_the_checkout_button() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+  }
+
+  @Then("User is navigated to the checkout page")
+  public void user_is_navigated_to_the_checkout_page() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+  }
+
+  @Then("User sees the checkout information form")
+  public void user_sees_the_checkout_information_form() {
     // Write code here that turns the phrase above into concrete actions
     throw new io.cucumber.java.PendingException();
   }
