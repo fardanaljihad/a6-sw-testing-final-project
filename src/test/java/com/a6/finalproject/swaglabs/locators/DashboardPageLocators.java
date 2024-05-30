@@ -45,4 +45,7 @@ public class DashboardPageLocators {
 
     @FindBy(xpath = "//*[@class=\"inventory_item_name\"]")
     public WebElement inventoryItemName;
+
+    @FindBy(xpath = "/html/body/div/div/div/div[1]/div[1]/div[3]/a/span")
+    public WebElement shoppingCartBadge;
 }
