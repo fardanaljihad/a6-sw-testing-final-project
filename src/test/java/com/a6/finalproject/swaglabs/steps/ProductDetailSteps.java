@@ -6,19 +6,21 @@ import io.cucumber.java.en.When;
 
 public class ProductDetailSteps {
 
-  // Background
-  @Given("User has logged in with valid credentials")
-  public void user_has_logged_in_with_valid_credentials() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-  }
+  // Sudah ada di CartSteps
+  // Background 
+  // @Given("User has logged in with valid credentials")
+  // public void user_has_logged_in_with_valid_credentials() {
+  //   // Write code here that turns the phrase above into concrete actions
+  //   throw new io.cucumber.java.PendingException();
+  // }
 
   // Scenario 1
-  @Given("User is on the dashboard page")
-  public void user_is_on_the_dashboard_page() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-  }
+  // Sudah ada di CartSteps
+  // @Given("User is on the dashboard page")
+  // public void user_is_on_the_dashboard_page() {
+  //   // Write code here that turns the phrase above into concrete actions
+  //   throw new io.cucumber.java.PendingException();
+  // }
 
   @When("User clicks on the product image of {string} on the dashboard page")
   public void user_clicks_on_the_product_image_of_on_the_dashboard_page(String string) {

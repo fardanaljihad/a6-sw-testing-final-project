@@ -11,4 +11,7 @@ public class CartPageLocators {
   @FindBy(xpath = "//*[@id=\"checkout\"]")
   public WebElement checkoutBtn;
 
+  @FindBy(xpath = "/html/body/div/div/div/div[2]/div/div[1]")
+  public WebElement cartList;
+
 }
