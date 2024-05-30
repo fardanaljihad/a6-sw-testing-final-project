@@ -6,12 +6,12 @@ import org.openqa.selenium.support.FindBy;
 public class ProductDetailPageLocators {
   
   @FindBy(xpath = "//*[@id=\"back-to-products\"]")
-  WebElement backToProductBtn;
+  public WebElement backToProductBtn;
 
   @FindBy(xpath = "//*[@id=\"add-to-cart\"]")
-  WebElement addToCartBtn;
+  public WebElement addToCartBtn;
 
   @FindBy(xpath = "//*[@id=\"remove\"]")
-  WebElement removeBtn;
+  public WebElement removeBtn;
 
 }
