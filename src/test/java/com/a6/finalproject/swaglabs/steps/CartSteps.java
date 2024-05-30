@@ -75,5 +75,24 @@ public class CartSteps {
     // Write code here that turns the phrase above into concrete actions
     throw new io.cucumber.java.PendingException();
   }
+
+  // Scenario 3
+  @Given("User is on the cart page")
+  public void user_is_on_the_cart_page() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+  }
+
+  @When("User clicks the continue shopping button")
+  public void user_clicks_the_continue_shopping_button() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+  }
+
+  @Then("User is redirected to the dashboard page")
+  public void user_is_redirected_to_the_dashboard_page() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+  }
   
 }
