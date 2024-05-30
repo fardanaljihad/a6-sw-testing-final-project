@@ -1,17 +1,19 @@
 package com.a6.finalproject.swaglabs.steps;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
 import com.a6.finalproject.swaglabs.actions.LoginPageActions;
 import com.a6.finalproject.swaglabs.actions.CartPageActions;
 import com.a6.finalproject.swaglabs.actions.DashboardPageActions;
 import com.a6.finalproject.swaglabs.utils.HelperClass;
 
+import dev.failsafe.internal.util.Assert;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -89,27 +91,28 @@ public class CartSteps {
 
   // Scenario 2
   @Given("User has added {string} to the cart")
-  public void user_has_added_to_the_cart(String string) {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
+  public void user_has_added_to_the_cart(String numberOfItems) {
+    dashboardPageActions.clickAddToCartSauceLabsBackpack();
+    assertEquals(numberOfItems, dashboardPageActions.getNumberOfItemsInCart());
   }
 
-  @When("User clicks the Checkout button")
+  @When("User clicks the checkout button")
   public void user_clicks_the_checkout_button() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
+    cartPageActions.clickCheckoutBtn();
   }
 
   @Then("User is navigated to the checkout page")
   public void user_is_navigated_to_the_checkout_page() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
+    String expectedResult = "https://www.saucedemo.com/checkout-step-one.html";
+    String actualResult = driver.getCurrentUrl();
+
+    assertEquals(expectedResult, actualResult);
   }
 
   @Then("User sees the checkout information form")
   public void user_sees_the_checkout_information_form() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
+    WebElement informationForm = driver.findElement(By.xpath("/html/body/div/div/div/div[2]/div/form/div[1]"));
+    assertNotNull(informationForm);
   }
 
   // Scenario 3

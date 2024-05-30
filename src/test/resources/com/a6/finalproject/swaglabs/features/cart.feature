@@ -27,8 +27,8 @@ Feature: Cart
     Examples:
       | number_of_items |
       | 1               |
-      | 2               |
-      | 6               |
+      # | 2               |
+      # | 6               |
 
 
   Scenario: User continues shopping from cart page

@@ -74,4 +74,8 @@ public class DashboardPageActions {
         String inventoryItemName = this.dashboardPageLocators.inventoryItemName.getText();
         return inventoryItemName;
     }
+
+    public String getNumberOfItemsInCart() {
+        return dashboardPageLocators.shoppingCartBadge.getText();
+    }
 }
