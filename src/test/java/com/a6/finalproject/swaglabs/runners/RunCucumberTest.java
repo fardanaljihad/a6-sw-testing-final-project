@@ -10,6 +10,7 @@ import static io.cucumber.junit.platform.engine.Constants.PLUGIN_PROPERTY_NAME;
 @Suite
 @IncludeEngines("cucumber")
 @SelectPackages("com.a6.finalproject")
-@ConfigurationParameter(key = PLUGIN_PROPERTY_NAME, value = "pretty")
+// @ConfigurationParameter(key = PLUGIN_PROPERTY_NAME, value = "pretty")
+@ConfigurationParameter(key = PLUGIN_PROPERTY_NAME, value = "html:target/a6-reports")
 public class RunCucumberTest {
 }
