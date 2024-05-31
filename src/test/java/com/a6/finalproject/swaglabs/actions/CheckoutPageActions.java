@@ -67,4 +67,37 @@ public class CheckoutPageActions {
     public WebElement getBackHomeButton() {
         return checkoutPageLocators.backHomeButton;
     }
+
+    public void fillfirstname(String firstname) {
+        checkoutPageLocators.firstNameField.sendKeys(firstname);
+    }
+
+    public void filllastname(String lastname) {
+        checkoutPageLocators.lastNameField.sendKeys(lastname);
+    }
+
+    public void fillpostalcode(String postalcode) {
+        checkoutPageLocators.postalCodeField.sendKeys(postalcode);
+    }
+
+    public WebElement getPaymentInformation() {
+        return checkoutPageLocators.paymentInformation;
+    }
+
+    public WebElement getShippingInformation() {
+        return checkoutPageLocators.shippingInformation;
+    }
+
+    public WebElement getItemTotal() {
+        return checkoutPageLocators.itemTotal;
+    }
+
+    public WebElement getTax() {
+        return checkoutPageLocators.tax;
+    }
+
+    public WebElement getTotal() {
+        return checkoutPageLocators.total;
+    }
+
 }

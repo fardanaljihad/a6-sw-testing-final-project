@@ -46,4 +46,19 @@ public class CheckoutPageLocators {
 
     @FindBy(id = "back-to-products")
     public WebElement backHomeButton;
+
+    @FindBy(xpath = "//*[@data-test='payment-info-value']")
+    public WebElement paymentInformation;
+
+    @FindBy(xpath = "//*[@data-test='shipping-info-value']")
+    public WebElement shippingInformation;
+
+    @FindBy(xpath = "//*[@data-test='subtotal-label']")
+    public WebElement itemTotal;
+
+    @FindBy(xpath = "//*[@data-test='tax-label']")
+    public WebElement tax;
+
+    @FindBy(xpath = "//*[@data-test='total-label']")
+    public WebElement total;
 }
