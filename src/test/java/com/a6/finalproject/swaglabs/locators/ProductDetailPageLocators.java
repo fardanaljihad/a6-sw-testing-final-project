@@ -14,4 +14,7 @@ public class ProductDetailPageLocators {
   @FindBy(xpath = "//*[@id=\"remove\"]")
   public WebElement removeBtn;
 
+  @FindBy(xpath = "/html/body/div/div/div/div[2]/div/div")
+  public WebElement productInformation;
+
 }

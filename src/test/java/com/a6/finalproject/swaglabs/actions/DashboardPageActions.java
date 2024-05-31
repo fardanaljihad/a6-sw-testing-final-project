@@ -78,4 +78,12 @@ public class DashboardPageActions {
     public String getNumberOfItemsInCart() {
         return dashboardPageLocators.shoppingCartBadge.getText();
     }
+
+    public void clickSauceLabsBackpackImg() {
+        dashboardPageLocators.sauceLabsBackpackImg.click();
+    }
+
+    public void clickSauceLabsBikeLightImg() {
+        dashboardPageLocators.sauceLabsBikeLightImg.click();
+    }
 }

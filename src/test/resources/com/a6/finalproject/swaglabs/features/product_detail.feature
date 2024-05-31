@@ -11,7 +11,7 @@ Feature: Product Detail
     Examples:
       | item_name                |
       | Sauce Labs Backpack      |
-      | Sauce Labs Fleece Jacket |
+      | Sauce Labs Bike Light |
 
   Scenario: User adds product to cart
     Given User is on the product detail page

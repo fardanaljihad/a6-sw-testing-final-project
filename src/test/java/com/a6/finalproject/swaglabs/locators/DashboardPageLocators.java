@@ -48,4 +48,10 @@ public class DashboardPageLocators {
 
     @FindBy(xpath = "/html/body/div/div/div/div[1]/div[1]/div[3]/a/span")
     public WebElement shoppingCartBadge;
+
+    @FindBy(xpath = "/html/body/div/div/div/div[2]/div/div/div/div[1]/div[1]/a/img")
+    public WebElement sauceLabsBackpackImg;
+
+    @FindBy(xpath = "/html/body/div/div/div/div[2]/div/div/div/div[2]/div[1]/a/img")
+    public WebElement sauceLabsBikeLightImg;
 }

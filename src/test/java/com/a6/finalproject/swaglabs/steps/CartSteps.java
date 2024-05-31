@@ -6,14 +6,12 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 
 import com.a6.finalproject.swaglabs.actions.LoginPageActions;
 import com.a6.finalproject.swaglabs.actions.CartPageActions;
 import com.a6.finalproject.swaglabs.actions.DashboardPageActions;
 import com.a6.finalproject.swaglabs.utils.HelperClass;
 
-import dev.failsafe.internal.util.Assert;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
