@@ -6,46 +6,51 @@ import org.openqa.selenium.By;
 
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.cucumber.datatable.DataTable;
+import java.util.Map;
 import com.a6.finalproject.swaglabs.actions.LoginPageActions;
 import com.a6.finalproject.swaglabs.actions.DashboardPageActions;
 import com.a6.finalproject.swaglabs.actions.CartPageActions;
+import com.a6.finalproject.swaglabs.actions.CheckoutPageActions;
 import com.a6.finalproject.swaglabs.steps.*;
 
 public class EndToEndSteps {
     LoginPageActions loginPageActions = new LoginPageActions(Hooks.driver);
     DashboardPageActions dashboardPageActions = new DashboardPageActions(Hooks.driver);
     CartPageActions cartPageActions = new CartPageActions(Hooks.driver);
+    CheckoutPageActions checkoutPageActions = new CheckoutPageActions(Hooks.driver);
 
     @When("I Click Checkout Button")
     public void i_click_checkout_button() {
         cartPageActions.clickCheckoutBtn();
     }
 
-    @When("I Fill The Checkout Information")
-    public void i_fill_the_checkout_information() {
-        Hooks.driver.findElement(By.id("first-name")).sendKeys("John");
-        Hooks.driver.findElement(By.id("last-name")).sendKeys("Doe");
-        Hooks.driver.findElement(By.id("postal-code")).sendKeys("12345");
+    @When("I Fill The Checkout Information with:")
+    public void i_fill_the_checkout_information(DataTable dataTable) {
+        Map<String, String> data = dataTable.asMap(String.class, String.class);
+
+        checkoutPageActions.fillfirstname(data.get("First name"));
+        checkoutPageActions.filllastname(data.get("Last name"));
+        checkoutPageActions.fillpostalcode(data.get("Postal code"));
     }
 
     @When("I Click Continue Button")
     public void i_click_continue_button() {
-        Hooks.driver.findElement(By.id("continue")).click();
+        checkoutPageActions.clickContinueButton();
     }
 
     @When("I Click Finish Button")
     public void i_click_finish_button() {
-        Hooks.driver.findElement(By.id("finish")).click();
+        checkoutPageActions.clickFinishButton();
     }
     
-    @When("I see the confirmation page")
+    @When("I see the information of the order details")
     public void i_see_the_confirmation_page() {
-        boolean paymetInformation = Hooks.driver.findElement(By.xpath("//*[@data-test='payment-info-value']")).getText().contains("SauceCard #31337");
-        boolean shippingInformation = Hooks.driver.findElement(By.xpath("//*[@data-test='shipping-info-value']")).getText().contains("Free Pony Express Delivery!");
-        boolean itemTotal = Hooks.driver.findElement(By.xpath("//*[@data-test='subtotal-label']")).getText().contains("$29.99");
-        boolean tax = Hooks.driver.findElement(By.xpath("//*[@data-test='tax-label']")).getText().contains("$2.40");
-        boolean total = Hooks.driver.findElement(By.xpath("//*[@data-test='total-label']")).getText().contains("$32.39");
-
+        boolean paymetInformation = checkoutPageActions.getPaymentInformation().getText().contains("SauceCard #31337");
+        boolean shippingInformation = checkoutPageActions.getShippingInformation().getText().contains("Free Pony Express Delivery!");
+        boolean itemTotal = checkoutPageActions.getItemTotal().getText().contains("$29.99");
+        boolean tax = checkoutPageActions.getTax().getText().contains("$2.40");
+        boolean total = checkoutPageActions.getTotal().getText().contains("$32.39");
         boolean confirmation = paymetInformation && shippingInformation && itemTotal && tax && total;
         assertEquals(true, confirmation);
 
@@ -53,7 +58,8 @@ public class EndToEndSteps {
 
     @Then("I should see the confirmation message")
     public void i_should_see_the_confirmation_message() {
-        boolean message = Hooks.driver.findElement(By.className("complete-header")).getText().contains("Thank you for your order!");
+        boolean message = checkoutPageActions.getCompleteTitle().getText().contains("Thank you for your order!");
+        // boolean message = Hooks.driver.findElement(By.className("complete-header")).getText().contains("Thank you for your order!");
         assertEquals(true, message);
     }
 }
