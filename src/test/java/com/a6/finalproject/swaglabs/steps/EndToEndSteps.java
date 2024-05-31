@@ -4,21 +4,21 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.openqa.selenium.By;
 
-import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import com.a6.finalproject.swaglabs.actions.LoginPageActions;
 import com.a6.finalproject.swaglabs.actions.DashboardPageActions;
+import com.a6.finalproject.swaglabs.actions.CartPageActions;
 import com.a6.finalproject.swaglabs.steps.*;
 
 public class EndToEndSteps {
     LoginPageActions loginPageActions = new LoginPageActions(Hooks.driver);
     DashboardPageActions dashboardPageActions = new DashboardPageActions(Hooks.driver);
+    CartPageActions cartPageActions = new CartPageActions(Hooks.driver);
 
     @When("I Click Checkout Button")
     public void i_click_checkout_button() {
-        Hooks.driver.findElement(By.id("checkout")).click();
+        cartPageActions.clickCheckoutBtn();
     }
 
     @When("I Fill The Checkout Information")
