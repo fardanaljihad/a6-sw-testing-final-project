@@ -13,7 +13,7 @@ import static io.cucumber.junit.platform.engine.Constants.PLUGIN_PROPERTY_NAME;
 @IncludeEngines("cucumber")
 @SelectPackages("com.a6.finalproject.apiusercontroller") // Restrict to specific package
 @SelectClasspathResource("com/a6/finalproject/api-user-controller/features") // Adjusted to select classpath resource
-@ConfigurationParameter(key = PLUGIN_PROPERTY_NAME, value = "html:target/a6-reports-api")
+@ConfigurationParameter(key = PLUGIN_PROPERTY_NAME, value = "html:test-report/api-user-controller-report.html")
 @ConfigurationParameter(key = GLUE_PROPERTY_NAME, value = "com.a6.finalproject.apiusercontroller.steps")
 public class ApiUserControllerRunCucumberTest {
 }
