@@ -15,20 +15,17 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 
-public class GetUserSteps {
+public class DeleteUserSteps {
 
     private RequestSpecification httpRequest;
     private Response response;
     private String userId;
     private String appId;
 
-    
-    @Given("I have loaded the user data from {string}")
-    public void i_have_loaded_the_user_data_from(String filePath) throws IOException {
-
-        String path = "src/test/resources/com/a6/finalproject/api-user-controller/data/" + filePath + ".json";
-
-        String jsonData = HelperClass.loadJsonFromFile(path);
+    @Given("I have loaded the delete user data from {string}")
+    public void i_have_loaded_the_delete_user_data_from(String fileName) throws IOException {
+        String filePath = "src/test/resources/com/a6/finalproject/api-user-controller/data/" + fileName + ".json";
+        String jsonData = HelperClass.loadJsonFromFile(filePath);
         JSONObject jsonObject = new JSONObject(jsonData);
         this.userId = jsonObject.getString("user-id");
         this.appId = jsonObject.getString("app-id");
@@ -38,21 +35,19 @@ public class GetUserSteps {
         httpRequest.contentType("application/json");
     }
 
-    @When("I send a GET request to retrieve the user")
-    public void i_send_a_get_request_to_retrieve_the_user() {
-        response = httpRequest.request(Method.GET, "/user/" + userId);
+    @When("I send a DELETE request to delete the user")
+    public void i_send_a_delete_request_to_delete_the_user() {
+        response = httpRequest.request(Method.DELETE, "/user/" + userId);
     }
 
-    @Then("the response status code should be {int}")
+    @Then("response status code should be {int}")
     public void the_response_status_code_should_be(int statusCode) {
         assertEquals("Unexpected status code", statusCode, response.getStatusCode());
     }
 
-    @Then("the response body should contain {string}")
+    @Then("response body should contain {string}")
     public void the_response_body_should_contain(String expectedMessage) {
         String responseBody = response.getBody().asString();
         assertTrue("Response body does not contain expected message", responseBody.contains(expectedMessage));
-        System.out.println("Response Body => " + responseBody + "\n");
     }
-    
 }
