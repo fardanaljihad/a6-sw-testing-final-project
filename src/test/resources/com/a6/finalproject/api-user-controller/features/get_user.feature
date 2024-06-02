@@ -1,3 +1,4 @@
+@get
 Feature: Get User
 
 Scenario: Get user with empty app-id header

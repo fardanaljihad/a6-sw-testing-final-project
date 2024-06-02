@@ -1,3 +1,4 @@
+@checkout
 Feature: Checkout Functionality
 
   Background:

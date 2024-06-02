@@ -1,3 +1,4 @@
+@delete
 Feature: Delete User
 
   Scenario: Delete user with no app-id

@@ -1,3 +1,4 @@
+@product
 Feature: Product Detail
 
   Background:

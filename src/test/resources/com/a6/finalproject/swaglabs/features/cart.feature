@@ -1,3 +1,4 @@
+@cart
 Feature: Cart
 
   Background:

@@ -1,3 +1,4 @@
+@update
 Feature: Update User
 
   Background:

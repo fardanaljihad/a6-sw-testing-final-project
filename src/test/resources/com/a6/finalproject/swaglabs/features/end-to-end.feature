@@ -1,3 +1,4 @@
+@endtoend
 Feature: End-To-End Testing
 
   Scenario: End-To-End Testing
