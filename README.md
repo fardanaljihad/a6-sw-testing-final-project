@@ -40,7 +40,8 @@ a6-sw-testing-final-project/
 │       ├── java/com/a6/finalproject
 │       │   ├── apiusercontroller/
 │       │   │   ├── config/
-│       │   │   ├── endpoints/
+│       │   │   ├── runners/
+│       │   │   ├── steps/
 │       │   │   └── utils/
 │       │   └── swaglabs/
 │       │       ├── actions/
@@ -50,6 +51,7 @@ a6-sw-testing-final-project/
 │       │       └── utils/
 │       └── resources/com/a6/finalproject
 │           ├── apiusercontroller/
+│           │   ├── features/
 │           │   └── data/
 │           └── swaglabs/
 │               └── features/
