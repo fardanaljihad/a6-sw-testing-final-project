@@ -47,9 +47,9 @@ Sebelum menjalankan atau berkontribusi pada proyek ini, pastikan sistem Anda mem
      ```
    - Perintah untuk menjalankan semua test case aplikasi Swag Labs:
 
-   ```bash
-   mvn test -Dtest=com.a6.finalproject.swaglabs.runners.SwaglabsRunCucumberTest
-   ```
+     ```bash
+     mvn test -Dtest=com.a6.finalproject.swaglabs.runners.SwaglabsRunCucumberTest
+     ```
 
    - Perintah untuk menjalankan test case per fitur:
      ```bash
